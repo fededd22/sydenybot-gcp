@@ -1,0 +1,95 @@
+{
+  "log": {
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "listen": "0.0.0.0",
+      "port": 10090,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "d2cb8181-233c-4d18-9972-8a1b04db0044",
+            "level": 0
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/by_moon"
+        },
+        "sockopt": {
+          "tcpFastOpen": true,
+          "tcpKeepAliveInterval": 15
+        }
+      }
+    },
+    {
+      "listen": "0.0.0.0",
+      "port": 10091,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "d2cb8181-233c-4d18-9972-8a1b04db0044",
+            "level": 0,
+            "alterId": 0
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/by_moon"
+        },
+        "sockopt": {
+          "tcpFastOpen": true,
+          "tcpKeepAliveInterval": 15
+        }
+      }
+    },
+    {
+      "listen": "0.0.0.0",
+      "port": 10092,
+      "protocol": "trojan",
+      "settings": {
+        "clients": [
+          {
+            "password": "d6944f04-b7d8-4b29-8e56-ff769e031053",
+            "level": 0
+          },
+          {
+            "password": "e9e9776a-2fda-4f29-a636-6db7ba872676",
+            "level": 0
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/by_moon"
+        },
+        "sockopt": {
+          "tcpFastOpen": true,
+          "tcpKeepAliveInterval": 15
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIPv4"
+      },
+      "streamSettings": {
+        "sockopt": {
+          "tcpFastOpen": true
+        }
+      }
+    }
+  ]
+}
